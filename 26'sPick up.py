@@ -8,7 +8,7 @@ import threading
 extension_info = {
     "title": "26's Pick up",
     "description": "dl: set&off&stack&pick ",
-    "version": "0.1",
+    "version": "0.1.1",
     "author": "funkydemir66"
 }
 
@@ -36,7 +36,7 @@ def konusma(msj):
             for i in range(256):
                 if sc:
                     ext.send_to_server('{out:'+str(KATMER)+'}{i:'+str(kod2)+'}{i:1}{i:11}{i:0}')
-                    sleep(0.1)
+                    sleep(0.3)
 
 
     text = msj.packet.read_string()
@@ -55,7 +55,7 @@ def konusma(msj):
         msj.is_blocked = True
         sc = True
         ext.send_to_server('{out:'+str(KATMER)+'}{i:'+str(kod)+'}{i:1}{i:11}{i:0}')
-        ext.send_to_server('{out:SetCustomStackingHeight}{i:'+str(kod)+'}{i:3900}')
+        ext.send_to_server('{out:SetCustomStackingHeight}{i:'+str(kod)+'}{i:3500}')
         ext.send_to_client('{in:Chat}{i:123456789}{s:"Stack setting "}{i:0}{i:30}{i:0}{i:0}')
         thread = threading.Thread(target=main)
         thread.start()
